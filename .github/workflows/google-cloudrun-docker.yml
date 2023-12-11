@@ -50,7 +50,7 @@ on:
 
 env:
   PROJECT_ID: final-project-users-backend # TODO: update Google Cloud project id
-  GAR_LOCATION: southamerica-east1-docker.pkg.dev/final-project-database-407806/users-backend # TODO: update Artifact Registry location
+  GAR_LOCATION: southamerica-east1-docker.pkg.dev # TODO: update Artifact Registry location
   SERVICE: users-backend # TODO: update Cloud Run service name
   REGION: southamerica-east1 # TODO: update Cloud Run service region
 
