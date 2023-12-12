@@ -53,6 +53,7 @@ env:
   GAR_LOCATION: southamerica-east1 # TODO: update Artifact Registry location
   SERVICE: users-backend # TODO: update Cloud Run service name
   REGION: southamerica-east1 # TODO: update Cloud Run service region
+  REPOSITORY: users-backend-repository
 
 jobs:
   deploy:
@@ -84,8 +85,8 @@ jobs:
 
       - name: Build and Push Container
         run: |-
-          docker build -t "lautarose/${{ env.SERVICE }}" .
-          docker push "lautarose/${{ env.SERVICE }} ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/gc-${{ env.SERVICE }}:latest"
+          docker build -t "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}"
+          docker push "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.SERVICE }}:${{ github.sha }}"
 
       # END - Docker auth and build
 
