@@ -20,7 +20,7 @@ func init() {
 	DBUser := "usersdb"  //variable de entorno para el usuario de la base de datos
 	//DBPass := ""
 	DBPass := "password" //variable de entorno para la pass de la base de datos
-	DBHost := "34.95.218.145"
+	DBHost := "localhost"
 	// ------------------------
 
 	db, err = gorm.Open("mysql", DBUser+":"+DBPass+"@tcp("+DBHost+")/"+DBName+"?charset=utf8&parseTime=True")
