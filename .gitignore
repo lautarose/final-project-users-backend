@@ -20,7 +20,5 @@
 /.goland
 
 # Dependencias y directorios generados
-/go.sum
-/go.mod
 /bin/
 /vendor/
