@@ -51,7 +51,7 @@ on:
 env:
   PROJECT_ID: final-project-407919 # TODO: update Google Cloud project id
   GAR_LOCATION: southamerica-east1 # TODO: update Artifact Registry location
-  SERVICE: users-backend # TODO: update Cloud Run service name
+  SERVICE: project-users-backend # TODO: update Cloud Run service name
   REPOSITORY: images
   REGION: southamerica-east1 # TODO: update Cloud Run service region
 
