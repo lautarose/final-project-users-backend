@@ -53,12 +53,12 @@ jobs:
       
       - name: Deploy to Cloud Run
         run: |-
-          gcloud run deploy project-users-backend \
-          --image=southamerica-east1-docker.pkg.dev/final-project-407919/images/project-users-backend@sha256:6d226eb49b9984435b2d329d2f5acfb8b8a69becefbc5abce23736f08d7cd803 \
-          --region=southamerica-east1 \
-          --project=final-project-407919 \
-          && gcloud run services update-traffic project-users-backend --to-latest --region=southamerica-east1      
-      
+          gcloud run deploy '${{ env.PROJECT_ID }}' \
+          --image='${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/images/project-users-backend@sha256:${{ github.sha }' \
+          --region='${{ env.GAR_LOCATION }}' \
+          --project='${{ env.PROJECT_ID }}' \
+          && gcloud run services update-traffic '${{ env.SERVICE }}' --to-latest --region='${{ env.GAR_LOCATION }}'
+          
       #- name: Deploy to Cloud Run
       #  id: deploy
       #  uses: google-github-actions/deploy-cloudrun@v1
