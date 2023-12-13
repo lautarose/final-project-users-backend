@@ -57,7 +57,7 @@ jobs:
           --image=southamerica-east1-docker.pkg.dev/final-project-407919/images/project-users-backend@sha256:6d226eb49b9984435b2d329d2f5acfb8b8a69becefbc5abce23736f08d7cd803 \
           --region=southamerica-east1 \
           --project=final-project-407919 \
-          && gcloud run services update-traffic project-users-backend --to-latest      
+          && gcloud run services update-traffic project-users-backend --to-latest --region=southamerica-east1      
       
       #- name: Deploy to Cloud Run
       #  id: deploy
