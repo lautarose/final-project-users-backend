@@ -89,7 +89,7 @@ func TestUserServiceMock_GetUsers(t *testing.T) {
 	}
 
 	// Verificación de cantidad de usuarios obtenidos
-	if len(users) != 2 {
+	if len(users) != 1 {
 		t.Errorf("Número incorrecto de usuarios. Se esperaban 1, se obtuvieron %d", len(users))
 	}
 }
