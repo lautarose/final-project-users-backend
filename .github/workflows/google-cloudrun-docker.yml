@@ -24,6 +24,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+         
+      - name: Run Go tests
+        run: |
+          go test ./...
+        continue-on-error: false # Detendrá el flujo si las pruebas fallan
+
         
       - name: Google Auth
         id: auth
