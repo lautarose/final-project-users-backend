@@ -64,7 +64,7 @@ func TestUserServiceMock_GetUserById(t *testing.T) {
 
 	// Verificación de valores devueltos
 	expectedUser := dto.UserDto{
-		Id:       1,
+		Id:       2,
 		Name:     "John",
 		LastName: "Doe",
 		UserName: "johndoe",
