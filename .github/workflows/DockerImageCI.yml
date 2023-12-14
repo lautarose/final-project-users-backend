@@ -14,7 +14,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     
-    - name: Run Go tests
+    - name: Run unit tests
       run: |
         go test ./...
       continue-on-error: false # Detendrá el flujo si las pruebas fallan
