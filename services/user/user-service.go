@@ -10,7 +10,6 @@ type userService struct{}
 
 type userServiceInterface interface {
 	GetUserById(id int) (dto.UserDto, error)
-	GetUserByUsername(string) (dto.UserDto, error)
 	GetUsers() (dto.UsersDto, error)
 	InsertUser(dto.InsertUserDto) error
 }
@@ -63,23 +62,6 @@ func (s *userService) GetUsers() (dto.UsersDto, error) {
 	}
 
 	return usersDto, nil
-}
-
-func (s *userService) GetUserByUsername(username string) (dto.UserDto, error) {
-
-	user, err := userCliente.GetUserByUsername(username)
-	var userDto dto.UserDto
-
-	if err != nil {
-		return userDto, err
-	}
-
-	userDto.Name = user.Name
-	userDto.LastName = user.LastName
-	userDto.UserName = user.UserName
-	userDto.Id = user.UserID
-	userDto.Email = user.Email
-	return userDto, nil
 }
 
 func (s *userService) InsertUser(userDto dto.InsertUserDto) error {
